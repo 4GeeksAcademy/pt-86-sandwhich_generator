@@ -11,25 +11,22 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
+      crossorigin="anonymous" 
+      aria-label="test"
     />
   </head>
   <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <h1 class="mt-5">Make a Random Sandwhich</h1>
+      <div id="sandwhich">
+        <div id="bread">Italian</div>
+        <div id="meat">Ham</div>
+        <div id="cheese">American</div>
+        <div id="sauce">Mayo</div>
+        <div id="veg">Lettuce</div>
       </div>
+      <button class="btn btn-secondary">Make New Sandwhich</button>
     </div>
-
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
   </body>
 </html>
