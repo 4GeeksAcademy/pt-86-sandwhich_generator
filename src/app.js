@@ -6,32 +6,34 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  document.querySelector(".btn").addEventListener("click", 
-    generateSandwhich)
+  document.querySelector(".btn").addEventListener("click", generateSandwhich)
+  generateAllSandwhiches()
 };
 
+let breads = ["white", "wheat", "rye", "potato", "Hawaiian", "Italian"];
+let meats = ["turkey", "tuna", "chicken", "pepperoni", "ham", "meatball"];
+let cheeses = ["American", "Swiss", "Pepper Jack", "Provolone", "Cheddar"];
+let sauces = ["Mayo", "Mustard", "Ranch", "Oil & Vinegar", "Ketchup"];
+let vegs = ["lettuce", "spinach", "Onions", "bell peppers", "tomato"];
+let ingredients = [breads, meats, cheeses, sauces, vegs];
+
 const generateSandwhich = () => {
-  let breads = ["white", "wheat", "rye", "potato", "Hawaiian", "Italian"];
-  let meats = ["turkey", "tuna", "chicken", "pepperoni", "ham", "meatball"];
-  let cheeses = ["American", "Swiss", "Pepper Jack", "Provolone", "Cheddar"];
-  let sauces = ["Mayo", "Mustard", "Ranch", "Oil & Vinegar", "Ketchup"];
-  let vegs = ["lettuce", "spinach", "Onions", "bell peppers", "tomato"];
+  let sandwhichDiv = document.querySelector("#sandwhich");
+  let sandwhich = "";
 
-  let breadIndex = Math.floor(Math.random() * breads.length);
-  let meatIndex = Math.floor(Math.random() * meats.length);
-  let cheeseIndex = Math.floor(Math.random() * cheeses.length);
-  let sauceIndex = Math.floor(Math.random() * sauces.length);
-  let vegIndex = Math.floor(Math.random() * vegs.length);
+  for(let type of ingredients) {
+    sandwhich += type[Math.floor(Math.random() * type.length)] + " "
+  }
 
-  let breadDiv = document.querySelector("#bread");
-  let meatDiv = document.querySelector("#meat");
-  let cheeseDiv = document.querySelector("#cheese");
-  let sauceDiv = document.querySelector("#sauce");
-  let vegDiv = document.querySelector("#veg");
-
-  breadDiv.innerHTML = breads[breadIndex];
-  meatDiv.innerHTML = meats[meatIndex];
-  cheeseDiv.innerHTML = cheeses[cheeseIndex];
-  sauceDiv.innerHTML = sauces[sauceIndex];
-  vegDiv.innerHTML = vegs[vegIndex];
+  sandwhichDiv.innerHTML = sandwhich
 }
+
+const generateAllSandwhiches = () => {
+  for(let bread of breads) 
+    for(let meat of meats) 
+      for(let cheese of cheeses) 
+        for(let sauce of sauces) 
+          for(let veg of vegs) 
+            console.log(bread + " " + meat + " " + cheese + " " + sauce + " " + veg)
+}
+//14 from 15 line of code started 24 lines of code
